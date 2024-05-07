@@ -6,7 +6,7 @@ import getUserInfo from './getUserInfo';
 const Home = () => {
   const terminalRef = React.createRef();
   const [terminalOpen, setTerminalOpen] = useState(false);
-  const { USER, COMMANDS } = getUserInfo("johndoe");
+  const { USER, COMMANDS } = getUserInfo();
   const [isLoading, setIsLoading] = useState(true);
   return (
 

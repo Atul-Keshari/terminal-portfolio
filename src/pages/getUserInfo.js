@@ -54,7 +54,7 @@ const getUserInfo = () => {
       },
     ],
     skills: {
-        languages: ["C++", "JavaScript", "TypeScript","Dart","HTML","CSS"],
+      languages: ["C++", "JavaScript", "TypeScript","Dart","HTML","CSS"],
       frameworks: [
         "React Native",
         "React",
@@ -126,6 +126,23 @@ analytics and reporting capabilities, resulting in a 25% decrease in decision-ma
       "Problem Solving",
       "Debugging",
       "Automation",
+    ],
+    achievements:[`• LeetCode Weekly Contest 385: Ranked 116 Globally and 17 in India among 24000+ candidates.`,
+    `• CodeChef Starter-100 : Achieved a global rank of 21 in Div 3`,
+    `• BlackBox: Achieved 1st position among 200+ participating teams in the highly competitive Blackbox team event.`,
+    `• SIH : Reached to the finals of Smart-India Hackathon.`
+    ],
+    codingprofile:[
+      {
+        name:"LeetCode ",
+        brief:` Solved 700+ problems with a rating exceeding 2163, placing within the top 1.3% of all participants.`,
+        url:'https://leetcode.com/u/AtulKeshari/'
+      },
+      {
+        name:"Codeforces ",
+        brief:` 1442+ rating @specialist.`,
+        url:'https://codeforces.com/profile/404_Found_Noob'
+      }
     ],
   };
 
@@ -425,6 +442,46 @@ analytics and reporting capabilities, resulting in a 25% decrease in decision-ma
         `,
       isAvailable: true,
     },
+    {
+      id: 12,
+      command: "achievements",
+      usage: "Type 'achievements' to see the greeting.",
+      description: `
+          <h2 class="text-2xl font-bold mb-4">My Achievements</h2>
+          ${
+            USER.achievements.map(achievement => `
+          <p class="text-secondary-text mb-2">
+            ${achievement}
+          </p>
+`).join('')
+          }
+        `,
+
+      isAvailable: true,
+    },
+    {
+  id: 13,
+  command: "codingprofile",
+  usage: "Type 'codingProfile' to see the greeting.",
+  description: `
+    <h2 class="text-2xl font-bold mb-4">My Coding Profile</h2>
+    <p class="text-secondary-text mb-2">
+      Here's a summary of my coding achievements across different platforms:
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      ${
+        USER.codingprofile.map(profile => `
+          <li>
+            <strong>${profile.name}:</strong> ${profile.brief}
+            <a href="${profile.url}" class="text-primary-color ml-1" target="_blank" rel="noopener noreferrer">(View Profile)</a>
+          </li>
+        `).join('')
+      }
+    </ul>
+  `,
+  isAvailable: true,
+},
+
   ];
   return {
     USER,
