@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+colors: {
+    "primary-color": "#4CAF50", // Muted Green
+    "secondary-color": "#333333", // Dark Gray
+    "tertiary-color": "#1A1A1A", // Charcoal Gray
+    "primary-text": "#CCCCCC", // Light Gray
+    "secondary-text": "#999999", // Medium Gray
+    "tertiary-text": "#666666", // Dark Gray
+    "primary-bg": "#000000", // Black
+    "secondary-bg": "#1A1A1A", // Charcoal Gray
+    "tertiary-bg": "#333333", // Dark Gray
+    "primary-button": "#007ACC", // Blue
+    "secondary-button": "#FF5E5E", // Red
+    "tertiary-button": "#FFD700", // Gold
+  } */
+
+  /* light mode */
+
+body{
+    --primary-color: #4CAF50;
+    --secondary-color: #333333;
+    --tertiary-color: #1A1A1A;
+    --primary-text: #CCCCCC;
+    --secondary-text: #999999;
+    --tertiary-text: #666666;
+    --primary-bg: #000000;
+    --secondary-bg: #1A1A1A;
+    --tertiary-bg: #333333;
+    --primary-button: #007ACC;
+    --secondary-button: #FF5E5E;
+    --tertiary-button: #FFD700;
+}
+.hidden{
+    animation: fadeOut 800ms ease-in-out;
+    transform-origin: top left;
+}
+.fadeHide{
+    animation: fadeOut 800ms linear!important;
+    transform-origin: top!important;
+    display: none!important;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        display: block;
+        transform: scale(1);
+    }
+    90%{
+        opacity: 0;
+        display: block;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        transform: scale(0);
+    }
+}
+
+.appear{
+    animation: fadeIn 800ms ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        display: none;
+        transform: scale(0);
+    }
+    10%{
+        opacity: 0;
+        display: block;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        display: block;
+        transform: scale(1);
+    }
+}
+
+/* hide all scrollbars */
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* hide scrollbar for IE, Edge and Firefox */
+
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
